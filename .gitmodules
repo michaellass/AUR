@@ -1,0 +1,4 @@
+[submodule "ttf-ms-win10"]
+	path = ttf-ms-win10
+	url = https://aur.archlinux.org/ttf-ms-win10.git
+	branch = master
