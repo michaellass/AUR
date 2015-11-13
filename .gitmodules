@@ -2,3 +2,7 @@
 	path = ttf-ms-win10
 	url = https://aur.archlinux.org/ttf-ms-win10.git
 	branch = master
+[submodule "sslyze"]
+	path = sslyze
+	url = https://aur.archlinux.org/sslyze.git
+	branch = master
