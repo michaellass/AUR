@@ -1,0 +1,48 @@
+From c4e5b291df7d2b4e09eaceb384d886d9719a5c67 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michael=20La=C3=9F?= <lass@mail.uni-paderborn.de>
+Date: Mon, 18 Jan 2016 19:58:00 +0100
+Subject: [PATCH 2/2] Linux 4.4: Use locks_lock_file_wait
+
+The locks API was changed in Linux 4.4, introducing locks_lock_file_wait
+(e55c34a66f87e78fb1fc6b623b78c5ad74b475af) and removing
+flock_lock_file_wait (616fb38fa7a9599293e05ae1fa9acfaf73922434).
+
+Change-Id: Iba89a43c651737c86cbf519a933289d97c25a467
+---
+ acinclude.m4                 | 3 +++
+ src/afs/LINUX/osi_vnodeops.c | 4 ++++
+ 2 files changed, 7 insertions(+)
+
+diff --git a/acinclude.m4 b/acinclude.m4
+index 0f478b6..b505df3 100644
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -1034,6 +1034,9 @@ case $AFS_SYSNAME in *_linux* | *_umlinux*)
+ 		 AC_CHECK_LINUX_FUNC([kernel_setsockopt],
+ 				     [#include <linux/net.h>],
+ 				     [kernel_setsockopt(NULL, 0, 0, NULL, 0);])
++		 AC_CHECK_LINUX_FUNC([locks_lock_file_wait],
++				     [#include <linux/fs.h>],
++				     [locks_lock_inode_wait(NULL, NULL);])
+ 		 AC_CHECK_LINUX_FUNC([page_follow_link],
+ 				     [#include <linux/fs.h>],
+ 				     [page_follow_link(0,0);])
+diff --git a/src/afs/LINUX/osi_vnodeops.c b/src/afs/LINUX/osi_vnodeops.c
+index b2e6dd7..24dd48b 100644
+--- a/src/afs/LINUX/osi_vnodeops.c
++++ b/src/afs/LINUX/osi_vnodeops.c
+@@ -699,7 +699,11 @@ afs_linux_flock(struct file *fp, int cmd, struct file_lock *flp) {
+     if ((code == 0 || flp->fl_type == F_UNLCK) && 
+         (cmd == F_SETLK || cmd == F_SETLKW)) {
+ 	flp->fl_flags &=~ FL_SLEEP;
++# if defined(HAVE_LINUX_LOCKS_LOCK_FILE_WAIT)
++	code = locks_lock_file_wait(fp, flp);
++# else
+ 	code = flock_lock_file_wait(fp, flp);
++# endif
+ 	if (code && flp->fl_type != F_UNLCK) {
+ 	    struct AFS_FLOCK flock2;
+ 	    flock2 = flock;
+-- 
+2.7.0
+
