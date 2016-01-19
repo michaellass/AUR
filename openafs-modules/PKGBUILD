@@ -21,7 +21,7 @@ source=(http://openafs.org/dl/${pkgver}/${_srcname}-${pkgver}-src.tar.bz2
 install=openafs-modules.install
 sha256sums=('3431702bdcbd1b27833060c50869e618a192495877ebb0a66e4610de0b48eb81'
             '42d135b674aa21d195234533612388f1bbed1e7ee5f5f636f68082c954e3777d'
-            '1477adad947136b8700a3ea383793b0661c6fc6cfc14e696eec775926a1f62df')
+            'ffd31929b6c807b5150d4f40ef25e99f48c64d9e1f456fbef9ff97194dea09c8')
 
 # Heuristic to determine version of installed kernel
 # You can modify this if the heuristic fails
