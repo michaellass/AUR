@@ -1,0 +1,72 @@
+From f6b487c209fa5481e2e99269890c6a2bebe6ec6f Mon Sep 17 00:00:00 2001
+From: Stephan Wiesand <stephan.wiesand@desy.de>
+Date: Tue, 8 Mar 2016 14:15:17 +0100
+Subject: [PATCH 3/3] Linux 4.4: Do not use splice() for cache storeback by
+ default
+
+Commit 34ffc9cd7d7eed62229704ad0e1d327f076ea7b6 introduced an
+optimization to storing back cache content using splice() to
+save a number of page copies. Alas, as of Linux 4.4 (commit
+c725bfce7968009756ed2836a8cd7ba4dc163011) splice may return
+ERESTARTSYS if there are pending signals, and it's not even
+clear how this should be dealt with.
+
+Add a configure switch --enable-linux-splice defaulting to off,
+and don't use the optimized storeproc operation unless it is
+enabled manually.
+
+Change-Id: Ib4477cdfb2cd0f49f516da75edc3cb9d1a8817dc
+(cherry picked from commit 6d11b2a99f6caf682612dffa659417608f5d0183)
+---
+ acinclude.m4             | 14 ++++++++++++++
+ src/afs/afs_fetchstore.c |  2 +-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+
+diff --git a/acinclude.m4 b/acinclude.m4
+index afad50b..93f738a 100644
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -252,6 +252,16 @@ AC_ARG_ENABLE([linux-d_splice_alias-extra-iput],
+ 	    [enable_linux_d_splice_alias_extra_iput="no"])
+      esac
+     ])
++AC_ARG_ENABLE([linux-splice],
++    [AS_HELP_STRING([--enable-linux-splice],
++        [Enable the use of splice() when writing out cache content.
++         This is an optimization because it saves a number of page copies.
++         It used to work on kernels up to 4.4 but was broken by Linux commit
++         c725bfce7968009756ed2836a8cd7ba4dc163011 . Enabling this should be
++         safe for kernels without that commit.
++         (defaults to disabled)])],
++    ,
++    [enable_linux_splice="no"])
+ AC_ARG_WITH([xslt-processor],
+ 	AS_HELP_STRING([--with-xslt-processor=ARG],
+ 	[which XSLT processor to use (possible choices are: libxslt, saxon, xalan-j, xsltproc)]),
+@@ -1164,6 +1174,10 @@ case $AFS_SYSNAME in *_linux* | *_umlinux*)
+ 		if test "x$enable_linux_d_splice_alias_extra_iput" = xyes; then
+ 		    AC_DEFINE(D_SPLICE_ALIAS_LEAK_ON_ERROR, 1, [for internal use])
+ 		fi
++                if test "x$enable_linux_splice" = xyes; then
++                    AC_DEFINE(LINUX_USE_SPLICE, 1, [define if using splice and thus afs_linux_storeproc is safe])
++                    AC_MSG_WARN([enabled splice storeproc optimization - make sure it is actually safe])
++                fi
+ dnl Linux-only, but just enable always.
+ 		AC_DEFINE(AFS_CACHE_BYPASS, 1, [define to activate cache bypassing Unix client])
+ esac
+diff --git a/src/afs/afs_fetchstore.c b/src/afs/afs_fetchstore.c
+index 38b064c..a42d4e7 100644
+--- a/src/afs/afs_fetchstore.c
++++ b/src/afs/afs_fetchstore.c
+@@ -329,7 +329,7 @@ struct storeOps rxfs_storeUfsOps = {
+     .padd =	rxfs_storePadd,
+     .close =	rxfs_storeClose,
+     .destroy =	rxfs_storeDestroy,
+-#ifdef AFS_LINUX26_ENV
++#if defined(AFS_LINUX26_ENV) && defined(LINUX_USE_SPLICE)
+     .storeproc = afs_linux_storeproc
+ #else
+     .storeproc = afs_GenericStoreProc
+-- 
+2.7.2
+

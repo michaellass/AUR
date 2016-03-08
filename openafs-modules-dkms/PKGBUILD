@@ -18,18 +18,21 @@ options=(!emptydirs)
 source=(http://openafs.org/dl/${pkgver}/${_srcname}-${pkgver}-src.tar.bz2
         dkms.conf
         0001-Linux-4.4-key_payload-has-no-member-value.patch
-        0002-Linux-4.4-Use-locks_lock_file_wait.patch)
+        0002-Linux-4.4-Use-locks_lock_file_wait.patch
+        0003-Linux-4.4-Do-not-use-splice-for-cache-storeback-by-d.patch)
 install=openafs-modules-dkms.install
 sha256sums=('3431702bdcbd1b27833060c50869e618a192495877ebb0a66e4610de0b48eb81'
             'ea7d1e6dfb5006016e25738be722c8793765f52ad55c0bbf588dd7fdf2bdd2bf'
-            '42d135b674aa21d195234533612388f1bbed1e7ee5f5f636f68082c954e3777d'
-            'ffd31929b6c807b5150d4f40ef25e99f48c64d9e1f456fbef9ff97194dea09c8')
+            'a530643db555099b22efe69bcfc0ca54af42e54c211a3ea8c23ff69746b49c4a'
+            '4220944b7f28d4a6344bcafea97f0bbf752a445b0fc42ef3a228e9260af20b05'
+            'eea6372fe742d6c7432d6d53cd13c684a53ce00c3af992a1e03f8f328a109f27')
 
 prepare() {
   cd ${srcdir}/${_srcname}-${pkgver}
 
   patch -p1 < ${srcdir}/0001-Linux-4.4-key_payload-has-no-member-value.patch
   patch -p1 < ${srcdir}/0002-Linux-4.4-Use-locks_lock_file_wait.patch
+  patch -p1 < ${srcdir}/0003-Linux-4.4-Do-not-use-splice-for-cache-storeback-by-d.patch
 
   # Only needed when changes to configure were made
   ./regen.sh -q
