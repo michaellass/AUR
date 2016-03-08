@@ -20,7 +20,6 @@ source=(http://openafs.org/dl/${pkgver}/${_srcname}-${pkgver}-src.tar.bz2
         0001-Linux-4.4-key_payload-has-no-member-value.patch
         0002-Linux-4.4-Use-locks_lock_file_wait.patch
         0003-Linux-4.4-Do-not-use-splice-for-cache-storeback-by-d.patch)
-install=openafs-modules-dkms.install
 sha256sums=('3431702bdcbd1b27833060c50869e618a192495877ebb0a66e4610de0b48eb81'
             'ea7d1e6dfb5006016e25738be722c8793765f52ad55c0bbf588dd7fdf2bdd2bf'
             'a530643db555099b22efe69bcfc0ca54af42e54c211a3ea8c23ff69746b49c4a'
