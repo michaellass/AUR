@@ -1,4 +1,4 @@
-From 35dc5b17f6d4d0826445fe8a84dae8ac40ee1455 Mon Sep 17 00:00:00 2001
+From 1a5e69aa0eed4386ba422bd3ff6913af6d05b29a Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Michael=20La=C3=9F?= <lass@mail.uni-paderborn.de>
 Date: Mon, 18 Jan 2016 19:58:00 +0100
 Subject: [PATCH 2/3] Linux 4.4: Use locks_lock_file_wait
