@@ -1,4 +1,4 @@
-From 1a5e69aa0eed4386ba422bd3ff6913af6d05b29a Mon Sep 17 00:00:00 2001
+From b7b656c5240eb4b62a5905370759daa4f1b03521 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Michael=20La=C3=9F?= <lass@mail.uni-paderborn.de>
 Date: Mon, 18 Jan 2016 19:58:00 +0100
 Subject: [PATCH 2/3] Linux 4.4: Use locks_lock_file_wait
@@ -10,8 +10,13 @@ flock_lock_file_wait (616fb38fa7a9599293e05ae1fa9acfaf73922434).
 locks_lock_file_wait can be used as a drop-in replacement so define
 flock_lock_file_wait as an alias for it.
 
-Change-Id: Iba89a43c651737c86cbf519a933289d97c25a467
-(cherry picked from commit 6736e52c00fda9e278d4f4ee3f130197ac814190)
+Reviewed-on: https://gerrit.openafs.org/12170
+Reviewed-by: Mark Vitale <mvitale@sinenomine.net>
+Reviewed-by: Benjamin Kaduk <kaduk@mit.edu>
+Tested-by: BuildBot <buildbot@rampaginggeek.com>
+(cherry picked from commit 58d82226a555d3781a5cb45e5cc177727628ebd8)
+
+Change-Id: Icceae3906c1a612fb9104b860e519bb7f94d25d3
 ---
  acinclude.m4               | 3 +++
  src/afs/LINUX/osi_compat.h | 4 ++++
@@ -47,5 +52,5 @@ index 47450e6..4d484c1 100644
  static inline int
  do_sync_read(struct file *fp, char *buf, size_t count, loff_t *offp) {
 -- 
-2.7.2
+2.7.4
 

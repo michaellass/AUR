@@ -1,4 +1,4 @@
-From 17bd24e34afbb606ddbc605dee5701d11b81f6dd Mon Sep 17 00:00:00 2001
+From 2d524981c32ac8f502fa344aac1a4952c64078f1 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Michael=20La=C3=9F?= <lass@mail.uni-paderborn.de>
 Date: Mon, 18 Jan 2016 18:29:00 +0100
 Subject: [PATCH 1/3] Linux 4.4: key_payload has no member 'value'
@@ -9,8 +9,14 @@ no 'value' member anymore.
 
 FIXES 132677
 
-Change-Id: Id26c40c80314a0087ecc0735029412787058ef07
-(cherry picked from commit c5e7e69c34952724e7f0e062f3903527091ecc0b)
+Reviewed-on: https://gerrit.openafs.org/12169
+Tested-by: BuildBot <buildbot@rampaginggeek.com>
+Reviewed-by: Mark Vitale <mvitale@sinenomine.net>
+Tested-by: Mark Vitale <mvitale@sinenomine.net>
+Reviewed-by: Benjamin Kaduk <kaduk@mit.edu>
+(cherry picked from commit 5067ee3ae11932a3f1c972c8f88b20afbd9e1d88)
+
+Change-Id: I5a3e89b2676b463935e9a77042cbcd8ab812dc68
 ---
  acinclude.m4               |  1 +
  src/afs/LINUX/osi_groups.c | 16 +++++++++++++++-
@@ -74,5 +80,5 @@ index 3b068e5..a83bcb9 100644
  		 * and the creds are from the current process */
  		if (afs_linux_cred_is_current(cred) &&
 -- 
-2.7.2
+2.7.4
 

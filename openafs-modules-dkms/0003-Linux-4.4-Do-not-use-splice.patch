@@ -1,4 +1,4 @@
-From 490c655dbbe2aa146528b6825a88cd8611dba543 Mon Sep 17 00:00:00 2001
+From c664b14959c366ff5fb36ce9b7934df61f44828d Mon Sep 17 00:00:00 2001
 From: Stephan Wiesand <stephan.wiesand@desy.de>
 Date: Tue, 8 Mar 2016 14:15:17 +0100
 Subject: [PATCH 3/3] Linux 4.4: Do not use splice()
@@ -10,16 +10,42 @@ problem has been present for a long time, but as of Linux 4.4
 likely to happen.
 
 Until resources are available to fix the code to handle such errors,
-avoid the use of splice().
+avoid the riskier uses of splice().
 
-Change-Id: Ib4477cdfb2cd0f49f516da75edc3cb9d1a8817dc
-(cherry picked from commit c4631b82fef71263a615af73f5d4cf56694e7354)
+If there is a default implementation of file_splice_{write,read},
+use that; on somewhat older kernels where it is not available,
+use the generic version instead.
+
+[kaduk@mit.edu: add test for default_file_splice_write]
+
+Reviewed-on: https://gerrit.openafs.org/12217
+Reviewed-by: Chas Williams <3chas3@gmail.com>
+Reviewed-by: Benjamin Kaduk <kaduk@mit.edu>
+Tested-by: BuildBot <buildbot@rampaginggeek.com>
+(cherry picked from commit ae5f411c3b374367ab8ae69488f78f8e0484ce48)
+
+Change-Id: I40dd0d60caece6379a62674defb8d46a2bfadad6
 ---
+ acinclude.m4                   | 3 +++
  src/afs/LINUX/osi_fetchstore.c | 6 ++++--
  src/afs/LINUX/osi_vnodeops.c   | 2 +-
  src/afs/afs_fetchstore.c       | 2 +-
- 3 files changed, 6 insertions(+), 4 deletions(-)
+ 4 files changed, 9 insertions(+), 4 deletions(-)
 
+diff --git a/acinclude.m4 b/acinclude.m4
+index afad50b..09ae278 100644
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -1010,6 +1010,9 @@ case $AFS_SYSNAME in *_linux* | *_umlinux*)
+ 		 AC_CHECK_LINUX_FUNC([splice_direct_to_actor],
+ 				     [#include <linux/splice.h>],
+ 				     [splice_direct_to_actor(NULL,NULL,NULL);])
++		 AC_CHECK_LINUX_FUNC([default_file_splice_read],
++				     [#include <linux/fs.h>],
++				     [default_file_splice_read(NULL,NULL,NULL, 0, 0);])
+ 		 AC_CHECK_LINUX_FUNC([svc_addr_in],
+ 				     [#include <linux/sunrpc/svc.h>],
+ 				     [svc_addr_in(NULL);])
 diff --git a/src/afs/LINUX/osi_fetchstore.c b/src/afs/LINUX/osi_fetchstore.c
 index 4089bbb..997c1aa 100644
 --- a/src/afs/LINUX/osi_fetchstore.c
@@ -58,7 +84,7 @@ index 4089bbb..997c1aa 100644
  
  #endif
 diff --git a/src/afs/LINUX/osi_vnodeops.c b/src/afs/LINUX/osi_vnodeops.c
-index ae0513c..bfca83a 100644
+index ae0513c..2a83fc0 100644
 --- a/src/afs/LINUX/osi_vnodeops.c
 +++ b/src/afs/LINUX/osi_vnodeops.c
 @@ -834,7 +834,7 @@ struct file_operations afs_file_fops = {
@@ -66,7 +92,7 @@ index ae0513c..bfca83a 100644
    .sendfile =   generic_file_sendfile,
  #endif
 -#if defined(STRUCT_FILE_OPERATIONS_HAS_SPLICE)
-+#if 0 && defined(STRUCT_FILE_OPERATIONS_HAS_SPLICE)
++#if defined(STRUCT_FILE_OPERATIONS_HAS_SPLICE) && !defined(HAVE_LINUX_DEFAULT_FILE_SPLICE_READ)
  # if defined(HAVE_LINUX_ITER_FILE_SPLICE_WRITE)
    .splice_write = iter_file_splice_write,
  # else
@@ -84,5 +110,5 @@ index 38b064c..98544fe 100644
  #else
      .storeproc = afs_GenericStoreProc
 -- 
-2.7.2
+2.7.4
 
