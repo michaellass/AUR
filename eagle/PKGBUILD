@@ -59,4 +59,7 @@ package() {
   # move man page
   mv "$pkgdir"/opt/$pkgname/doc/$pkgname.1 \
      "$pkgdir/usr/share/man/man1/$pkgname.1"
+
+  # allow libQt5Network.so.5 to find the provided libssl.so
+  ln -sf "/opt/$pkgname/lib/libssl.so.10" "$pkgdir/opt/$pkgname/lib/libssl.so"
 }
