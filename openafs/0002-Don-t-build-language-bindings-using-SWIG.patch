@@ -1,0 +1,26 @@
+From 1c3533df73eb2eec7b46f41e74ec001b78f4fb07 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Michael=20La=C3=9F?= <lass@mail.uni-paderborn.de>
+Date: Fri, 3 Feb 2017 21:48:33 +0100
+Subject: [PATCH 2/2] Don't build language bindings using SWIG
+
+Change-Id: I388dea0e849825c42bdd09d31cb77a400e62a722
+---
+ src/cf/swig.m4 | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/src/cf/swig.m4 b/src/cf/swig.m4
+index 7f615ad33..18d695e4a 100644
+--- a/src/cf/swig.m4
++++ b/src/cf/swig.m4
+@@ -4,8 +4,5 @@ dnl is available; if it's not, don't build the extra language bindings.
+ AC_DEFUN([OPENAFS_SWIG],
+ [AC_CHECK_PROG([SWIG], [swig], [swig])
+ LIBUAFS_BUILD_PERL=
+-if test "x$SWIG" = "xswig" ; then
+-	LIBUAFS_BUILD_PERL=LIBUAFS_BUILD_PERL
+-fi
+ AC_SUBST(LIBUAFS_BUILD_PERL)
+ ])
+-- 
+2.11.0
+

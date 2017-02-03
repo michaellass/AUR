@@ -5,7 +5,7 @@
 # https://github.com/michaellass/AUR
 
 pkgname=openafs
-pkgver=1.6.20.1
+pkgver=1.8.0pre1
 pkgrel=1
 pkgdesc="Open source implementation of the AFS distributed file system"
 arch=('i686' 'x86_64' 'armv7h')
@@ -21,21 +21,19 @@ backup=(etc/conf.d/openafs
         etc/openafs/CellServDB)
 options=(!emptydirs)
 install=openafs.install
-source=(http://openafs.org/dl/${pkgver}/${pkgname}-${pkgver}-src.tar.bz2
-        http://openafs.org/dl/${pkgver}/${pkgname}-${pkgver}-doc.tar.bz2
+source=(http://openafs.org/dl/openafs/candidate/${pkgver}/${pkgname}-${pkgver}-src.tar.bz2
+        http://openafs.org/dl/openafs/candidate/${pkgver}/${pkgname}-${pkgver}-doc.tar.bz2
         0001-Adjust-RedHat-config-and-service-files.patch
-        0002-Add-configure-option-to-not-install-kauth.patch
-        0003-Do-not-install-kauth-manpages-when-kauth-is-disabled.patch
+        0002-Don-t-build-language-bindings-using-SWIG.patch
         tmpfiles.d-openafs.conf)
-sha256sums=('dc869eecf6c81949d3dd2021eaf87118ef9b90ec5012a35f64836a02a58a8826'
-            '2c4bf6f53030e8a9cf3460d9c9292bcdbfea356930ed1d436506e8dc60db0f1c'
-            '1b115a0db1c749ead1b5b5653a5752bdedf2a46a7a6deafa242f11577a5a52f0'
-            '8ca587677a4b68e2957b6f3062c22da307fa4030cb7f6c0904500709a3bf8a02'
-            '0f6968388b3feb784026366f8f4acc974bb9051dcab5977b2c15dbc2c1a99b5e'
+sha256sums=('9607f3de79970de6589d801bda153ae530c5ba967a4a12c32d6e692a61af3880'
+            '7b23e1420fd4e071525590b960f5bdca6ef16c2b32159e968562dde335946ae6'
+            'c2d1dd8446d2837a03c6a9cd1bf06325a55baa3ec747d4cd63a189351918f06d'
+            '15395c491fcd206cfaaed0a5181ad18a3960c747aa782a3e7d0355abb07303e0'
             '5ef549180d1ac4e9530b65df7ddbdc1eceac6d6d6398fb2f32b06e96c1d9b5f0')
 
 # If you need the kauth tools set this to 1. But be aware that these tools
-# are considered insecure since 2003!
+# are considered insecure since 2003! This also affects the PAM libs.
 ENABLE_KAUTH=0
 
 prepare() {
@@ -44,9 +42,10 @@ prepare() {
   # Adjust RedHat config and service files to our needs
   patch -p1 < ${srcdir}/0001-Adjust-RedHat-config-and-service-files.patch
 
-  # Backport possibility to disable kauth
-  patch -p1 < ${srcdir}/0002-Add-configure-option-to-not-install-kauth.patch
-  patch -p1 < ${srcdir}/0003-Do-not-install-kauth-manpages-when-kauth-is-disabled.patch
+  # Disable the use of SWIG as it segfaults for some reason.
+  # If we really wanted this functionality, we would have to add it to
+  # makedepends anyway.
+  patch -p1 < ${srcdir}/0002-Don-t-build-language-bindings-using-SWIG.patch
 
   # Only needed when changes to configure were made
   ./regen.sh -q
@@ -90,10 +89,6 @@ package() {
   install -dm700 ${pkgdir}/var/cache/openafs
   touch ${pkgdir}/var/cache/openafs/.keepdir
 
-  # move PAM libs
-  install -dm755 ${pkgdir}/usr/lib/security
-  mv ${pkgdir}/usr/lib/pam_afs.krb.so.1 ${pkgdir}/usr/lib/pam_afs.so.1 ${pkgdir}/usr/lib/security/
-
   # install systemd service files
   install -Dm644 ${srcdir}/${pkgname}-${pkgver}/src/packaging/RedHat/openafs-client.service ${pkgdir}/usr/lib/systemd/system/openafs-client.service
   install -Dm644 ${srcdir}/${pkgname}-${pkgver}/src/packaging/RedHat/openafs-server.service ${pkgdir}/usr/lib/systemd/system/openafs-server.service
@@ -105,13 +100,15 @@ package() {
   install -Dm644 ${srcdir}/${pkgname}-${pkgver}/src/packaging/RedHat/openafs-cacheinfo ${pkgdir}/etc/${pkgname}/cacheinfo
 
   # install license
-  install -Dm644 ${srcdir}/${pkgname}-${pkgver}/src/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+  install -Dm644 ${srcdir}/${pkgname}-${pkgver}/LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
 
   # install tmpfiles.d entry for /afs
   install -Dm644 ${srcdir}/tmpfiles.d-openafs.conf ${pkgdir}/usr/lib/tmpfiles.d/openafs.conf
 
-  # if kauth was installed rename kpasswd which is already provided by krb5
+  # if kauth was installed rename kpasswd which is already provided by krb5 and move PAM libs
   if [ $ENABLE_KAUTH -eq 1 ]; then
+    install -dm755 ${pkgdir}/usr/lib/security
+    mv ${pkgdir}/usr/lib/pam_afs.krb.so ${pkgdir}/usr/lib/pam_afs.so ${pkgdir}/usr/lib/security/
     mv ${pkgdir}/usr/bin/kpasswd ${pkgdir}/usr/bin/kpasswd-openafs
     mv ${pkgdir}/usr/share/man/man1/kpasswd.1 ${pkgdir}/usr/share/man/man1/kpasswd-openafs.1
   fi
