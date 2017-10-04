@@ -25,7 +25,7 @@ noextract=(JabRef-${pkgver}.jar)
 sha256sums=('5555fd7691600a47e6ced54873738b4bd04dc2ad7f749c66887d343d2ff1dc06'
             'd0a8248eeaafc526f1137703fdc5aac1c8fae106f94c4bef56e3650e2c4c73a7'
             'adc0d45ca2adc7a2593a16a5a2b70eb73b96a0efca09a3ecc3c517b338e72c9b'
-            'ef8e6b956233304e98b2b08e8020e8c551e07e8a390eafc1e691991faa09a818')
+            'cdd007d58bce2296402da1775f10aba99d9a95c0b72ceae80d1acd800d17dd09')
 
 prepare() {
   cd ${srcdir}
