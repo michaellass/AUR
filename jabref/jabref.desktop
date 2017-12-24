@@ -8,5 +8,5 @@ Icon=jabref
 Exec=jabref %U
 Keywords=bibtex;biblatex;latex;bibliography
 Categories=Office;
-StartupWMClass=java-lang-Thread
+StartupWMClass=org-jabref-JabRefMain
 MimeType=text/x-bibtex;
