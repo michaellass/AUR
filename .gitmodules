@@ -6,3 +6,7 @@
 	path = sslyze
 	url = https://aur.archlinux.org/sslyze.git
 	branch = master
+[submodule "qspectrumanalyzer"]
+	path = qspectrumanalyzer
+	url = https://aur.archlinux.org/qspectrumanalyzer.git
+	branch = master
