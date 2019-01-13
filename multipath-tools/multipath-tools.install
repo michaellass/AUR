@@ -1,5 +1,0 @@
-post_install() {
-	cat <<-EOF
-	 * For full functonality ensure that the dm_multipath kernel module is loaded
-	EOF
-}
