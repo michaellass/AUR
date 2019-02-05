@@ -32,7 +32,7 @@ md5sums=('SKIP')
 
 case "$API" in
   17)  source[0]="${pkgname}::git+https://github.com/kodi-pvr/pvr.vdr.vnsi.git#branch=Krypton" ;;
-  18)  source[0]="${pkgname}::git+https://github.com/kodi-pvr/pvr.vdr.vnsi.git#branch=Leia" ;;
+  18)  ;; #source[0]="${pkgname}::git+https://github.com/kodi-pvr/pvr.vdr.vnsi.git#branch=Leia" ;;
   99)  ;;
   *)   echo "Unknown API version. Follow instructions in PKGBUILD." && false
 esac
