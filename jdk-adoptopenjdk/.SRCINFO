@@ -46,12 +46,10 @@ pkgbase = jdk-adoptopenjdk
 	source = https://github.com/AdoptOpenJDK/openjdk12-binaries/releases/download/jdk-12.0.1%2B12/OpenJDK12U-jdk_x64_linux_hotspot_12.0.1_12.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
-	source = freedesktop-policytool.desktop
 	source = freedesktop-jshell.desktop
 	sha256sums = dd3fdf3771a05a010029c1cf1aef516928eab55d6f5eb019008875e9ccbc8337
 	sha256sums = 9b11bbaf5834748fc9a30cb887c129b32f34a81535dc512ff47b26ae72c91927
 	sha256sums = 16551b98abbd5cbb9da14157df60afd2a608602c6e3734e979d9574e0780f8da
-	sha256sums = 59ecc9542661f169020867cacba7d8e3723a57ab0b6ccd02c5c1a2fbb898a866
 	sha256sums = 7d46b5ffcb2528f039b4534dddeab4b87de92106c25ff17e175570edde52f1c9
 
 pkgname = jdk-adoptopenjdk
