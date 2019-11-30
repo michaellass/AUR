@@ -1,0 +1,37 @@
+# Current Maintainer: Sean Lynch <seanl@literati.org>
+pkgname=beignet-git
+pkgver=1.0.0.r799.gcf95b44
+pkgrel=1
+pkgdesc='A GPGPU System for Intel Ivybridge GPUs'
+arch=('x86_64')
+url='http://cgit.freedesktop.org/beignet/'
+license=('LGPL2.1')
+depends=('glu' 'libsm' 'libxext' 'mesa' 'ncurses' 'ocl-icd' 'llvm')
+makedepends=('clang' 'cmake' 'python2')
+provides=('opencl-intel' 'opencl-headers' 'opencl-headers12')
+conflicts=('beignet' 'opencl-intel' 'opencl-headers' 'opencl-headers12')
+replaces=('beignet' 'opencl-intel' 'opencl-headers' 'opencl-headers12')
+source=("git://anongit.freedesktop.org/beignet")
+sha256sums=('SKIP')
+
+function pkgver() {
+	cd "$srcdir/beignet"
+	git describe --long --tags | sed 's/^Release_v//;s/-/.r/;s/-/./'
+}
+
+build() {
+	cd "$srcdir/beignet"
+	mkdir -p "$srcdir/beignet/build"
+	cd "$srcdir/beignet/build"
+	cmake .. \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DCMAKE_BUILD_TYPE=RELEASE \
+		-DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python2
+	make
+}
+
+package() {
+	cd "$srcdir/beignet/build"
+	make DESTDIR="$pkgdir/" install
+}

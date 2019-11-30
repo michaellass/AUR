@@ -1,0 +1,33 @@
+pkgbase = beignet-git
+	pkgdesc = A GPGPU System for Intel Ivybridge GPUs
+	pkgver = 1.0.0.r799.gcf95b44
+	pkgrel = 1
+	url = http://cgit.freedesktop.org/beignet/
+	arch = x86_64
+	license = LGPL2.1
+	makedepends = clang
+	makedepends = cmake
+	makedepends = python2
+	depends = glu
+	depends = libsm
+	depends = libxext
+	depends = mesa
+	depends = ncurses
+	depends = ocl-icd
+	depends = llvm
+	provides = opencl-intel
+	provides = opencl-headers
+	provides = opencl-headers12
+	conflicts = beignet
+	conflicts = opencl-intel
+	conflicts = opencl-headers
+	conflicts = opencl-headers12
+	replaces = beignet
+	replaces = opencl-intel
+	replaces = opencl-headers
+	replaces = opencl-headers12
+	source = git://anongit.freedesktop.org/beignet
+	sha256sums = SKIP
+
+pkgname = beignet-git
+
