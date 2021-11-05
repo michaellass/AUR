@@ -7,6 +7,7 @@ pkgbase = jdk11-temurin
 	arch = x86_64
 	license = custom
 	depends = java-runtime-common>=3
+	depends = java-environment-common
 	depends = ca-certificates-utils
 	depends = desktop-file-utils
 	depends = libxrender

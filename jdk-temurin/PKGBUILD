@@ -21,7 +21,7 @@ arch=('x86_64')
 url='https://adoptium.net/'
 license=('custom')
 
-depends=('java-runtime-common>=3' 'ca-certificates-utils' 'desktop-file-utils' 'libxrender' 'libxtst' 'alsa-lib')
+depends=('java-runtime-common>=3' 'java-environment-common' 'ca-certificates-utils' 'desktop-file-utils' 'libxrender' 'libxtst' 'alsa-lib')
 optdepends=('gtk2: for the Gtk+ 2 look and feel'
             'gtk3: for the Gtk+ 3 look and feel')
 provides=("java-runtime-headless=${_majorver}"
