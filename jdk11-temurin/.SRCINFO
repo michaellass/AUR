@@ -1,6 +1,6 @@
 pkgbase = jdk11-temurin
 	pkgdesc = Temurin 11 (OpenJDK 11 Java binaries by Adoptium, formerly AdoptOpenJDK)
-	pkgver = 11.0.13.u8
+	pkgver = 11.0.14.u9
 	pkgrel = 1
 	url = https://adoptium.net/
 	install = install_jdk11-temurin.sh
@@ -17,18 +17,18 @@ pkgbase = jdk11-temurin
 	optdepends = gtk3: for the Gtk+ 3 look and feel
 	provides = java-runtime-headless=11
 	provides = java-runtime-headless-openjdk=11
-	provides = jre11-openjdk-headless=11.0.13.u8
-	provides = jre-openjdk-headless=11.0.13.u8
+	provides = jre11-openjdk-headless=11.0.14.u9
+	provides = jre-openjdk-headless=11.0.14.u9
 	provides = java-runtime=11
 	provides = java-runtime-openjdk=11
-	provides = jre11-openjdk=11.0.13.u8
-	provides = jre-openjdk=11.0.13.u8
+	provides = jre11-openjdk=11.0.14.u9
+	provides = jre-openjdk=11.0.14.u9
 	provides = java-environment=11
 	provides = java-environment-openjdk=11
-	provides = jdk11-openjdk=11.0.13.u8
-	provides = jdk-openjdk=11.0.13.u8
-	provides = openjdk11-src=11.0.13.u8
-	provides = openjdk-src=11.0.13.u8
+	provides = jdk11-openjdk=11.0.14.u9
+	provides = jdk-openjdk=11.0.14.u9
+	provides = openjdk11-src=11.0.14.u9
+	provides = openjdk-src=11.0.14.u9
 	replaces = jdk11-adoptopenjdk
 	backup = etc/java-11-temurin/net.properties
 	backup = etc/java-11-temurin/logging.properties
@@ -44,7 +44,7 @@ pkgbase = jdk11-temurin
 	backup = etc/java-11-temurin/management/jmxremote.access
 	backup = etc/java-11-temurin/management/jmxremote.password.template
 	backup = etc/java-11-temurin/sound.properties
-	source = https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.13%2B8/OpenJDK11U-jdk_x64_linux_hotspot_11.0.13_8.tar.gz
+	source = https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.14%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.14_9.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
 	source = freedesktop-jshell.desktop

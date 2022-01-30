@@ -8,8 +8,8 @@
 # https://github.com/michaellass/AUR
 
 _majorver=17
-_completever=17.0.1
-_updatever=12
+_completever=17.0.2
+_updatever=8
 pkgrel=1
 pkgver=${_completever}.u${_updatever}
 _tag_ver=${_completever}+${_updatever}
