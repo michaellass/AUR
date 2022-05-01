@@ -9,8 +9,8 @@
 
 _majorver=11
 _minorver=0
-_securityver=14.1
-_updatever=1
+_securityver=15
+_updatever=10
 pkgrel=1
 pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
 _tag_ver=${_majorver}.${_minorver}.${_securityver}+${_updatever}
@@ -57,9 +57,9 @@ backup=(etc/java-${_majorver}-temurin/net.properties
 install=install_jdk11-temurin.sh
 
 source_x86_64=(https://github.com/adoptium/temurin${_majorver}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_majorver}U-jdk_x64_linux_hotspot_${_tag_ver_short/+/_}.tar.gz)
-sha256sums_x86_64=('43fb84f8063ad9bf6b6d694a67b8f64c8827552b920ec5ce794dfe5602edffe7')
+sha256sums_x86_64=('5fdb4d5a1662f0cca73fec30f99e67662350b1fa61460fa72e91eb9f66b54d0b')
 source_armv7h=(https://github.com/adoptium/temurin${_majorver}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_majorver}U-jdk_arm_linux_hotspot_${_tag_ver_short/+/_}.tar.gz)
-sha256sums_armv7h=('f4d53a1753cdde830d7872c6a1279df441f3f9aeb5d5037a568b3a392ebce9c2')
+sha256sums_armv7h=('999fbd90b070f9896142f0eb28354abbeb367cbe49fd86885c626e2999189e0a')
 source=(freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
