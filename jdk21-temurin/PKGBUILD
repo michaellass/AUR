@@ -7,17 +7,16 @@
 # This PKGBUILD is maintained on github:
 # https://github.com/michaellass/AUR
 
-_majorver=22
-_completever=22.0.0
-_updatever=36
-pkgrel=1
+_majorver=21
+_completever=21.0.2
+_updatever=13
+pkgrel=2
 pkgver=${_completever}.u${_updatever}
-#_tag_ver=${_completever}+${_updatever}
-_tag_ver=${_majorver}+${_updatever}
+_tag_ver=${_completever}+${_updatever}
 _versuffix=U
 
-pkgname=jdk-temurin
-pkgdesc="Temurin (OpenJDK ${_majorver} Java binaries by Adoptium, formerly AdoptOpenJDK)"
+pkgname=jdk21-temurin
+pkgdesc="Temurin ${_majorver} (OpenJDK ${_majorver} Java binaries by Adoptium, formerly AdoptOpenJDK)"
 arch=('x86_64')
 url='https://adoptium.net/'
 license=('custom')
@@ -35,33 +34,32 @@ provides=("java-runtime-headless=${_majorver}"
           "jdk-openjdk=${pkgver}"
           "openjdk${_majorver}-src=${pkgver}"
           "openjdk-src=${pkgver}")
-replaces=("jdk-adoptopenjdk")
-backup=(etc/java-temurin/logging.properties
-        etc/java-temurin/management/jmxremote.access
-        etc/java-temurin/management/jmxremote.password.template
-        etc/java-temurin/management/management.properties
-        etc/java-temurin/net.properties
-        etc/java-temurin/sdp/sdp.conf.template
-        etc/java-temurin/security/java.policy
-        etc/java-temurin/security/java.security
-        etc/java-temurin/security/policy/limited/default_local.policy
-        etc/java-temurin/security/policy/limited/default_US_export.policy
-        etc/java-temurin/security/policy/limited/exempt_local.policy
-        etc/java-temurin/security/policy/README.txt
-        etc/java-temurin/security/policy/unlimited/default_local.policy
-        etc/java-temurin/security/policy/unlimited/default_US_export.policy
-        etc/java-temurin/sound.properties)
-install=install_jdk-temurin.sh
+backup=(etc/java-${_majorver}-temurin/logging.properties
+        etc/java-${_majorver}-temurin/management/jmxremote.access
+        etc/java-${_majorver}-temurin/management/jmxremote.password.template
+        etc/java-${_majorver}-temurin/management/management.properties
+        etc/java-${_majorver}-temurin/net.properties
+        etc/java-${_majorver}-temurin/sdp/sdp.conf.template
+        etc/java-${_majorver}-temurin/security/java.policy
+        etc/java-${_majorver}-temurin/security/java.security
+        etc/java-${_majorver}-temurin/security/policy/limited/default_local.policy
+        etc/java-${_majorver}-temurin/security/policy/limited/default_US_export.policy
+        etc/java-${_majorver}-temurin/security/policy/limited/exempt_local.policy
+        etc/java-${_majorver}-temurin/security/policy/README.txt
+        etc/java-${_majorver}-temurin/security/policy/unlimited/default_local.policy
+        etc/java-${_majorver}-temurin/security/policy/unlimited/default_US_export.policy
+        etc/java-${_majorver}-temurin/sound.properties)
+install=install_jdk${_majorver}-temurin.sh
 options=(!strip)
 
 source=(https://github.com/adoptium/temurin${_majorver}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_majorver}${_versuffix}-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
-sha256sums=('bc3d99e816d0c373f424cd7aa2b6d3e8081a7189fe55c1561616922200ec8e47'
-            'a67f393684e85d04653eb925fa4a6baaa618a152899bb81646a4ff7f30e84c30'
-            'bc6f506add26b48d77282535026357984fdb8bd924fe6f053fbec5a37984b710'
-            '0544f1ca50c9d8d4a7361392c31e5cdafdd12e9587c9a1d710074f6ab14f7aff')
+sha256sums=('454bebb2c9fe48d981341461ffb6bf1017c7b7c6e15c6b0c29b959194ba3aaa5'
+            '23ced5efdb3381e6318af1acb343c714b2d9aacdb4666fee05dc58cd254b2d07'
+            'ef7f6465272608a35615665f8e4b0837b43b4db7bf22f8eb7cecdd6170b5b2ee'
+            '166b128e025404e7b4048c5b3c958e080a13a98f84b6faa9cfe11530f553e287')
 
 _jvmdir=/usr/lib/jvm/java-${_majorver}-temurin
 _jdkdir=jdk-${_tag_ver}
@@ -75,8 +73,8 @@ package() {
 
   # Conf
   install -dm 755 "${pkgdir}/etc"
-  mv conf "${pkgdir}/etc/java-temurin"
-  ln -sf /etc/java-temurin conf
+  mv conf "${pkgdir}/etc/java-${_majorver}-temurin"
+  ln -sf /etc/java-${_majorver}-temurin conf
 
   # Legal
   install -dm 755 "${pkgdir}/usr/share/licenses"

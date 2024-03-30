@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Temurin Java 21 Shell
+Comment=Temurin Java 21 Shell
+Keywords=java;shell
+Exec=/usr/lib/jvm/java-21-temurin/bin/jshell
+Terminal=true
+Type=Application
+Categories=Application;System;
