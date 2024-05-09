@@ -14,7 +14,7 @@
 #                                                                             #
 ###############################################################################
 
-API=20
+API=21
 
 pkgname=kodi-addon-pvr-hts-git
 pkgver=r1063.c8e933b
@@ -34,6 +34,7 @@ case "$API" in
   18)  source[0]="${pkgname}::git+https://github.com/kodi-pvr/pvr.hts.git#branch=Leia" ;;
   19)  source[0]="${pkgname}::git+https://github.com/kodi-pvr/pvr.hts.git#branch=Matrix" ;;
   20)  source[0]="${pkgname}::git+https://github.com/kodi-pvr/pvr.hts.git#branch=Nexus" ;;
+  21)  source[0]="${pkgname}::git+https://github.com/kodi-pvr/pvr.hts.git#branch=Omega" ;;
   99)  ;;
   *)   echo "Unknown API version. Follow instructions in PKGBUILD." && false
 esac
