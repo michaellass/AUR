@@ -9,8 +9,8 @@
 #                                                                             #
 # API changes between different Kodi versions make it necessary to specify    #
 # the version of Kodi you want to build this package for. You can choose      #
-# between Leia (18), Matrix (19), Nexus (20) and git master (99). Do so in    #
-# the following line.                                                         #
+# between Leia (18), Matrix (19), Nexus (20), Omega (21) and git master (99). #
+# Do so in the following line.                                                #
 #                                                                             #
 ###############################################################################
 
