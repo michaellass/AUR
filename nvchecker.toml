@@ -1,0 +1,175 @@
+[__config__]
+oldver = "nvchecker.json"
+newver = "nvchecker_new.json"
+
+[applecommander]
+source = "github"
+github = "AppleCommander/AppleCommander"
+use_latest_release = true
+
+[archlinux-java-run]
+source = "github"
+github = "michaellass/archlinux-java-run"
+use_latest_release = true
+
+[arxiv-collector]
+source = "github"
+github = "dougalsutherland/arxiv-collector"
+use_latest_release = true
+
+[eagle]
+source = "regex"
+url = "https://eagle-updates.circuits.io/downloads/latest.html"
+regex = "<title>Autodesk EAGLE (.+) Download</title>"
+
+[ent]
+source = "regex"
+url = "https://packages.debian.org/unstable/ent"
+regex = "Package: ent \\((.+) and others\\)"
+
+[flvstreamer]
+source = "regex"
+url = "http://download.savannah.nongnu.org/releases/flvstreamer/source/?C=N&O=D"
+regex = ">flvstreamer-(.+).tar.gz<"
+
+[fortran-language-server]
+source = "github"
+github = "hansec/fortran-language-server"
+use_latest_release = true
+
+[fritzing]
+source = "regex"
+url = "https://fritzing.org/download/"
+regex = "Version\\W*<strong>\\W*<a [^>]*>(.+)</a>\\W*</strong>\\W*was released on"
+
+[gnokii]
+source = "regex"
+url = "https://www.gnokii.org/"
+regex = "Current&nbsp;gnokii&nbsp;version: <b>([0-9\\.]+)</b>"
+
+[gqrx]
+source = "github"
+github = "gqrx-sdr/gqrx"
+use_latest_release = true
+
+[grml-rescueboot]
+source = "github"
+github = "grml/grml-rescueboot"
+use_max_tag = true
+
+[ikiwiki]
+source = "regex"
+url = "https://ikiwiki.info/"
+regex = "This site generally runs the latest release of ikiwiki; currently, it runs\\W+ikiwiki (.*)\\."
+
+[jabref]
+source = "github"
+github = "JabRef/jabref"
+use_latest_release = true
+
+[jdk-temurin]
+source = "jq"
+url = "https://api.adoptium.net/v3/assets/latest/22/hotspot"
+filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
+
+[jdk11-temurin]
+source = "jq"
+url = "https://api.adoptium.net/v3/assets/latest/11/hotspot"
+filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
+
+[jdk17-temurin]
+source = "jq"
+url = "https://api.adoptium.net/v3/assets/latest/17/hotspot"
+filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
+
+[jdk21-temurin]
+source = "jq"
+url = "https://api.adoptium.net/v3/assets/latest/21/hotspot"
+filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
+
+[js8call]
+source = "bitbucket"
+bitbucket = "widefido/js8call"
+use_max_tag = true
+use_sorted_tags = true
+sort_version_key = "vercmp"
+
+[krb5-auth-dialog]
+source = "gitlab"
+gitlab = "GNOME/krb5-auth-dialog"
+host = "gitlab.gnome.org"
+use_max_tag = true
+exclude_regex = ".*(alpha|beta).*"
+
+[macrofusion]
+source = "regex"
+url = "https://sourceforge.net/projects/macrofusion/"
+regex = "Download macrofusion_(.*).orig.tar.gz from SourceForge"
+
+[meshtastic-python]
+source = "github"
+github = "meshtastic/python"
+use_latest_release = true
+
+[mp-sonivoxeas]
+source = "github"
+github = "pedrolcl/multiplatform-sonivoxeas"
+use_latest_release = true
+
+[mumudvb]
+source = "github"
+github = "braice/MuMuDVB"
+use_max_tag = true
+
+[openafs]
+source = "github"
+github = "openafs/openafs"
+use_max_tag = true
+exclude_regex = ".*pre[0-9]+"
+
+[pidgin-latex]
+source = "regex"
+url = "https://sourceforge.net/projects/pidgin-latex/"
+regex = "Download pidgin-latex_(.*).tar.bz2 from SourceForge"
+
+[polyclipping]
+source = "regex"
+url = "https://sourceforge.net/projects/polyclipping/"
+regex = "Download Clipper ver. (.+) from SourceForge"
+
+[pycrc]
+source = "github"
+github = "tpircher/pycrc"
+use_max_tag = true
+
+[python-dotmap]
+source = "pypi"
+pypi = "dotmap"
+
+[python-print-color]
+source = "pypi"
+pypi = "print-color"
+
+[python-pygatt]
+source = "pypi"
+pypi = "pygatt"
+
+[ssllabs-scan]
+source = "github"
+github = "ssllabs/ssllabs-scan"
+use_max_tag = true
+
+[sslyze]
+source = "github"
+github = "nabla-c0d3/sslyze"
+use_latest_release = true
+
+[tvbrowser]
+source = "regex"
+url = "https://www.tvbrowser.org/index.php?id=download"
+regex = "<h2>TV-Browser (.+)</h2>"
+
+[yed]
+source = "regex"
+url = "http://www.yworks.com/products/yed"
+regex = "The latest release is version <b>([0-9\\.]+)</b>"

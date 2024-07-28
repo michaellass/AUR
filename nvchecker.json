@@ -1,0 +1,146 @@
+{
+  "version": 2,
+  "data": {
+    "applecommander": {
+      "version": "1.9.0",
+      "gitref": "refs/tags/1.9.0",
+      "url": "https://github.com/AppleCommander/AppleCommander/releases/tag/1.9.0"
+    },
+    "archlinux-java-run": {
+      "version": "v10",
+      "gitref": "refs/tags/v10",
+      "url": "https://github.com/michaellass/archlinux-java-run/releases/tag/v10"
+    },
+    "arxiv-collector": {
+      "version": "0.4.1",
+      "gitref": "refs/tags/0.4.1",
+      "url": "https://github.com/djsutherland/arxiv-collector/releases/tag/0.4.1"
+    },
+    "eagle": {
+      "version": "9.6.2"
+    },
+    "ent": {
+      "version": "1.2debian-3"
+    },
+    "flvstreamer": {
+      "version": "2.1c1"
+    },
+    "fortran-language-server": {
+      "version": "v1.12.0",
+      "gitref": "refs/tags/v1.12.0",
+      "url": "https://github.com/hansec/fortran-language-server/releases/tag/v1.12.0"
+    },
+    "fritzing": {
+      "version": "1.0.3"
+    },
+    "gnokii": {
+      "version": "0.6.31"
+    },
+    "gqrx": {
+      "version": "v2.17.5",
+      "gitref": "refs/tags/v2.17.5",
+      "url": "https://github.com/gqrx-sdr/gqrx/releases/tag/v2.17.5"
+    },
+    "grml-rescueboot": {
+      "version": "v0.6.1",
+      "gitref": "refs/tags/v0.6.1",
+      "revision": "68b4be0fd7493ac8b31d4dc7584c5e078d06459f",
+      "url": "https://github.com/grml/grml-rescueboot/releases/tag/v0.6.1"
+    },
+    "ikiwiki": {
+      "version": "3.20200202.4"
+    },
+    "jabref": {
+      "version": "v5.15",
+      "gitref": "refs/tags/v5.15",
+      "url": "https://github.com/JabRef/jabref/releases/tag/v5.15"
+    },
+    "jdk-temurin": {
+      "version": "jdk-22.0.2+9"
+    },
+    "jdk11-temurin": {
+      "version": "jdk-11.0.24+8"
+    },
+    "jdk17-temurin": {
+      "version": "jdk-17.0.12+7"
+    },
+    "jdk21-temurin": {
+      "version": "jdk-21.0.4+7"
+    },
+    "js8call": {
+      "version": "v2.2.0-ga",
+      "url": "https://bitbucket.org/widefido/js8call/commits/tag/v2.2.0-ga"
+    },
+    "krb5-auth-dialog": {
+      "version": "v43.0",
+      "revision": "65cd9dac890d270e4fbb8f69a30aff32c4a2c209",
+      "url": "https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/tags/v43.0"
+    },
+    "macrofusion": {
+      "version": "0.7.4"
+    },
+    "meshtastic-python": {
+      "version": "2.3.14",
+      "gitref": "refs/tags/2.3.14",
+      "url": "https://github.com/meshtastic/python/releases/tag/2.3.14"
+    },
+    "mp-sonivoxeas": {
+      "version": "v2.1.0",
+      "gitref": "refs/tags/v2.1.0",
+      "url": "https://github.com/pedrolcl/multiplatform-sonivoxeas/releases/tag/v2.1.0"
+    },
+    "mumudvb": {
+      "version": "2.1.0",
+      "gitref": "refs/tags/2.1.0",
+      "revision": "5914a72a22407e5e96b7abf0ce55ab15832897a0",
+      "url": "https://github.com/braice/MuMuDVB/releases/tag/2.1.0"
+    },
+    "openafs": {
+      "version": "openafs-stable-1_8_11",
+      "gitref": "refs/tags/openafs-stable-1_8_11",
+      "revision": "519a619dfece05d48d0eca2fbc33c18c13dd5cec",
+      "url": "https://github.com/openafs/openafs/releases/tag/openafs-stable-1_8_11"
+    },
+    "pidgin-latex": {
+      "version": "1.5.0"
+    },
+    "polyclipping": {
+      "version": "6.4.2"
+    },
+    "pycrc": {
+      "version": "v0.10.0",
+      "gitref": "refs/tags/v0.10.0",
+      "revision": "03be6a28af3dd81de0f80aa718509808396a55c6",
+      "url": "https://github.com/tpircher/pycrc/releases/tag/v0.10.0"
+    },
+    "python-dotmap": {
+      "version": "1.3.30",
+      "url": "https://pypi.org/project/dotmap/1.3.30/"
+    },
+    "python-print-color": {
+      "version": "0.4.6",
+      "url": "https://pypi.org/project/print-color/0.4.6/"
+    },
+    "python-pygatt": {
+      "version": "4.0.5",
+      "url": "https://pypi.org/project/pygatt/4.0.5/"
+    },
+    "ssllabs-scan": {
+      "version": "v1.5.0",
+      "gitref": "refs/tags/v1.5.0",
+      "revision": "e2861a040763619b6313a10c0979948e229287cd",
+      "url": "https://github.com/ssllabs/ssllabs-scan/releases/tag/v1.5.0"
+    },
+    "sslyze": {
+      "version": "6.0.0",
+      "gitref": "refs/tags/6.0.0",
+      "url": "https://github.com/nabla-c0d3/sslyze/releases/tag/6.0.0"
+    },
+    "tvbrowser": {
+      "version": "4.2.7"
+    },
+    "yed": {
+      "version": "3.24"
+    }
+  }
+}
