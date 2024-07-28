@@ -1,0 +1,21 @@
+name: nvchecker
+
+on:
+  schedule:
+  - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  nvchecker:
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install nvchecker
+      run: |
+        pacman -Sy
+        pacman -S --noconfirm nvchecker python-jq python-packaging pyalpm
+    - name: Run nvchecker
+      run: nvchecker -c nvchecker.toml | tee nvchecker.out
+    - name: Evaluate result
+      run: test ! -s nvchecker.out
