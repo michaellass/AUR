@@ -96,10 +96,10 @@
       "url": "https://github.com/braice/MuMuDVB/releases/tag/2.1.0"
     },
     "openafs": {
-      "version": "openafs-stable-1_8_11",
-      "gitref": "refs/tags/openafs-stable-1_8_11",
-      "revision": "519a619dfece05d48d0eca2fbc33c18c13dd5cec",
-      "url": "https://github.com/openafs/openafs/releases/tag/openafs-stable-1_8_11"
+      "version": "openafs-stable-1_8_12",
+      "gitref": "refs/tags/openafs-stable-1_8_12",
+      "revision": "84c867efb7961bf285f7547d6669d7068344958c",
+      "url": "https://github.com/openafs/openafs/releases/tag/openafs-stable-1_8_12"
     },
     "pidgin-latex": {
       "version": "1.5.0"
