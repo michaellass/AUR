@@ -47,11 +47,6 @@ source = "regex"
 url = "https://www.gnokii.org/"
 regex = "Current&nbsp;gnokii&nbsp;version: <b>([0-9\\.]+)</b>"
 
-[gqrx]
-source = "github"
-github = "gqrx-sdr/gqrx"
-use_latest_release = true
-
 [grml-rescueboot]
 source = "github"
 github = "grml/grml-rescueboot"
