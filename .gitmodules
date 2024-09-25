@@ -10,7 +10,3 @@
 	path = qspectrumanalyzer-git
 	url = https://aur.archlinux.org/qspectrumanalyzer-git.git
 	branch = master
-[submodule "gqrx"]
-	path = gqrx
-	url = https://aur.archlinux.org/gqrx.git
-	branch = master
