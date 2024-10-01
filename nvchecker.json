@@ -75,9 +75,9 @@
       "version": "0.7.4"
     },
     "meshtastic-python": {
-      "version": "2.5.0",
-      "gitref": "refs/tags/2.5.0",
-      "url": "https://github.com/meshtastic/python/releases/tag/2.5.0"
+      "version": "2.5.1",
+      "gitref": "refs/tags/2.5.1",
+      "url": "https://github.com/meshtastic/python/releases/tag/2.5.1"
     },
     "mp-sonivoxeas": {
       "version": "v2.1.0",
