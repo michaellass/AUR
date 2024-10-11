@@ -117,13 +117,9 @@ github = "braice/MuMuDVB"
 use_max_tag = true
 
 [openafs]
-#source = "github"
-#github = "openafs/openafs"
-#use_max_tag = true
-#exclude_regex = ".*pre[0-9]+"
-source = "jq"
-url = "https://api.github.com/repos/openafs/openafs/git/refs/tags"
-filter = '[.[] | select (.ref | test ("^refs/tags/openafs-stable-[0-9]+(_[0-9]+)*$"))] | .[-1].ref | split ("/") | .[-1]'
+source = "regex"
+url = "https://openafs.org/pages/release/latest.html"
+regex = "<h1>OpenAFS (.*) Release</h1>"
 
 [pidgin-latex]
 source = "regex"
