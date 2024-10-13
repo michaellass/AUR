@@ -62,9 +62,14 @@ source = "github"
 github = "JabRef/jabref"
 use_latest_release = true
 
+[jdk-temurin-major]
+source = "jq"
+url = "https://api.adoptium.net/v3/info/available_releases"
+filter = '.available_releases | .[-1]'
+
 [jdk-temurin]
 source = "jq"
-url = "https://api.adoptium.net/v3/assets/latest/22/hotspot"
+url = "https://api.adoptium.net/v3/assets/latest/23/hotspot"
 filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
 
 [jdk11-temurin]
