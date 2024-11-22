@@ -153,6 +153,11 @@ pypi = "print-color"
 source = "pypi"
 pypi = "pygatt"
 
+[siril]
+source = "regex"
+url = "https://siril.org/"
+regex = "Download SIRIL version (.+) released on"
+
 [ssllabs-scan]
 source = "github"
 github = "ssllabs/ssllabs-scan"

@@ -10,3 +10,6 @@
 	path = qspectrumanalyzer-git
 	url = https://aur.archlinux.org/qspectrumanalyzer-git.git
 	branch = master
+[submodule "siril"]
+	path = siril
+	url = https://aur.archlinux.org/siril.git
