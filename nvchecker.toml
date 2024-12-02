@@ -153,6 +153,11 @@ pypi = "print-color"
 source = "pypi"
 pypi = "pygatt"
 
+[sdrangel-bin]
+source = "github"
+github = "f4exb/sdrangel"
+use_latest_release = true
+
 [siril]
 source = "regex"
 url = "https://siril.org/"
