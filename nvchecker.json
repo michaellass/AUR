@@ -75,7 +75,10 @@
       "url": "https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/tags/v43.0"
     },
     "macrofusion": {
-      "version": "0.7.4"
+      "version": "0.7.6",
+      "gitref": "refs/tags/0.7.6",
+      "revision": "61ed210065890a48259da9218a1133f161bab9d5",
+      "url": "https://github.com/da-phil/macrofusion/releases/tag/0.7.6"
     },
     "meshtastic-python": {
       "version": "2.5.5",

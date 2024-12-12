@@ -102,9 +102,9 @@ use_max_tag = true
 exclude_regex = ".*(alpha|beta).*"
 
 [macrofusion]
-source = "regex"
-url = "https://sourceforge.net/projects/macrofusion/"
-regex = "Download macrofusion_(.*).orig.tar.gz from SourceForge"
+source = "github"
+github = "da-phil/macrofusion"
+use_max_tag = true
 
 [meshtastic-python]
 source = "github"
