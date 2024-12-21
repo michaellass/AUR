@@ -81,9 +81,9 @@
       "url": "https://github.com/da-phil/macrofusion/releases/tag/0.7.6"
     },
     "meshtastic-python": {
-      "version": "2.5.5",
-      "gitref": "refs/tags/2.5.5",
-      "url": "https://github.com/meshtastic/python/releases/tag/2.5.5"
+      "version": "2.5.6post1",
+      "gitref": "refs/tags/2.5.6post1",
+      "url": "https://github.com/meshtastic/python/releases/tag/2.5.6post1"
     },
     "mp-sonivoxeas": {
       "version": "v2.1.0",
