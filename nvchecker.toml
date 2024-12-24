@@ -60,7 +60,8 @@ regex = "This site generally runs the latest release of ikiwiki; currently, it r
 [jabref]
 source = "github"
 github = "JabRef/jabref"
-use_latest_release = true
+use_max_tag = true
+exclude_regex = ".*-.*"
 
 [jdk-temurin-major]
 source = "jq"
