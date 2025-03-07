@@ -122,6 +122,11 @@ source = "github"
 github = "braice/MuMuDVB"
 use_max_tag = true
 
+[netlabel-tools]
+source = "github"
+github = "netlabel/netlabel_tools"
+use_latest_release = true
+
 [openafs]
 source = "regex"
 url = "https://openafs.org/pages/release/latest.html"

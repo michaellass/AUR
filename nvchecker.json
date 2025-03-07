@@ -96,6 +96,11 @@
       "revision": "5914a72a22407e5e96b7abf0ce55ab15832897a0",
       "url": "https://github.com/braice/MuMuDVB/releases/tag/2.1.0"
     },
+    "netlabel-tools": {
+      "version": "v0.30.0",
+      "gitref": "refs/tags/v0.30.0",
+      "url": "https://github.com/netlabel/netlabel_tools/releases/tag/v0.30.0"
+    },
     "openafs": {
       "version": "1.8.13.2"
     },
