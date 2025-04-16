@@ -1,8 +1,4 @@
-# Maintainer: Michael Lass <bevan@bi-co.net>
-# Contributor: Jelle van der Waa <jelle@archlinux.org>
-
-# This PKGBUILD is maintained on github:
-# https://github.com/michaellass/AUR
+# Maintainer: Jelle van der Waa <jelle@archlinux.org>
 
 pkgname=polyclipping
 pkgver=6.4.2
