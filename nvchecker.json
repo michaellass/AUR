@@ -63,7 +63,7 @@
       "version": "jdk-17.0.14+7"
     },
     "jdk21-temurin": {
-      "version": "jdk-21.0.6+7"
+      "version": "jdk-21.0.7+6"
     },
     "js8call": {
       "version": "v2.2.0-ga",
