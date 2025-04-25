@@ -37,10 +37,10 @@ source = "github"
 github = "hansec/fortran-language-server"
 use_latest_release = true
 
-#[fritzing]
-#source = "regex"
-#url = "https://fritzing.org/download/"
-#regex = "Version\\W*<strong>\\W*<a [^>]*>(.+)</a>\\W*</strong>\\W*was released on"
+[fritzing]
+source = "regex"
+url = "https://fritzing.org/download/"
+regex = "Version\\W*<strong>\\W*<a [^>]*>(.+)</a>\\W*</strong>\\W*was released on"
 
 [gnokii]
 source = "regex"
