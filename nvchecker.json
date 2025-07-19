@@ -57,7 +57,7 @@
       "version": "24"
     },
     "jdk11-temurin": {
-      "version": "jdk-11.0.27+6"
+      "version": "jdk-11.0.28+6"
     },
     "jdk17-temurin": {
       "version": "jdk-17.0.16+8"
