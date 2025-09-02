@@ -54,8 +54,8 @@ use_max_tag = true
 
 [ikiwiki]
 source = "regex"
-url = "https://ikiwiki.info/"
-regex = "This site generally runs the latest release of ikiwiki; currently, it runs\\W+ikiwiki (.*)\\."
+url = "https://ftp.debian.org/debian/pool/main/i/ikiwiki/?C=N;O=D"
+regex = "ikiwiki_(.*).orig.tar.xz\">"
 
 [jabref]
 source = "github"
