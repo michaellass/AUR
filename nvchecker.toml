@@ -70,7 +70,7 @@ filter = '.available_releases | .[-1]'
 
 [jdk-temurin]
 source = "jq"
-url = "https://api.adoptium.net/v3/assets/latest/24/hotspot"
+url = "https://api.adoptium.net/v3/assets/latest/25/hotspot"
 filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
 
 [jdk11-temurin]
