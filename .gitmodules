@@ -13,3 +13,6 @@
 [submodule "siril"]
 	path = siril
 	url = https://aur.archlinux.org/siril.git
+[submodule "portfolio"]
+	path = portfolio
+	url = https://aur.archlinux.org/portfolio.git

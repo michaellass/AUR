@@ -110,6 +110,11 @@
     "polyclipping": {
       "version": "6.4.2"
     },
+    "portfolio": {
+      "version": "0.80.4",
+      "gitref": "refs/tags/0.80.4",
+      "url": "https://github.com/portfolio-performance/portfolio/releases/tag/0.80.4"
+    },
     "pycrc": {
       "version": "v0.11.0",
       "gitref": "refs/tags/v0.11.0",

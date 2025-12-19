@@ -142,6 +142,11 @@ source = "regex"
 url = "https://sourceforge.net/projects/polyclipping/"
 regex = "Download Clipper ver. (.+) from SourceForge"
 
+[portfolio]
+source = "github"
+github = "portfolio-performance/portfolio"
+use_latest_release = true
+
 [pycrc]
 source = "github"
 github = "tpircher/pycrc"
