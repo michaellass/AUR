@@ -172,7 +172,7 @@ use_latest_release = true
 [siril]
 source = "regex"
 url = "https://siril.org/download/"
-regex = "\">Siril ([0-9.]+)</a>"
+regex = "Download SIRIL version ([0-9.]+) released on"
 
 [ssllabs-scan]
 source = "github"
