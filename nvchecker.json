@@ -111,9 +111,9 @@
       "version": "6.4.2"
     },
     "portfolio": {
-      "version": "0.81.1",
-      "gitref": "refs/tags/0.81.1",
-      "url": "https://github.com/portfolio-performance/portfolio/releases/tag/0.81.1"
+      "version": "0.81.2",
+      "gitref": "refs/tags/0.81.2",
+      "url": "https://github.com/portfolio-performance/portfolio/releases/tag/0.81.2"
     },
     "pycrc": {
       "version": "v0.11.0",
