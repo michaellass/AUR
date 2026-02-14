@@ -17,6 +17,12 @@ source = "github"
 github = "dougalsutherland/arxiv-collector"
 use_latest_release = true
 
+[dream]
+source = "httpheader"
+url = "https://sourceforge.net/projects/drm/files/latest/download"
+header = "Location"
+regex = 'https://downloads.sourceforge.net/project/drm/dream/([0-9\\.]+)/'
+
 [eagle]
 source = "regex"
 url = "https://eagle-updates.circuits.io/downloads/latest.html"
