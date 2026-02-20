@@ -7,9 +7,9 @@
       "url": "https://github.com/AppleCommander/AppleCommander/releases/tag/13.0"
     },
     "archlinux-java-run": {
-      "version": "v11",
-      "gitref": "refs/tags/v11",
-      "url": "https://github.com/michaellass/archlinux-java-run/releases/tag/v11"
+      "version": "v12",
+      "gitref": "refs/tags/v12",
+      "url": "https://github.com/michaellass/archlinux-java-run/releases/tag/v12"
     },
     "arxiv-collector": {
       "version": "0.4.1",
