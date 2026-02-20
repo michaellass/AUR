@@ -16,3 +16,6 @@
 [submodule "portfolio"]
 	path = portfolio
 	url = https://aur.archlinux.org/portfolio.git
+[submodule "meshtastic-python"]
+	path = meshtastic-python
+	url = https://aur.archlinux.org/meshtastic-python.git
