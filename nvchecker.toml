@@ -38,6 +38,11 @@ source = "regex"
 url = "http://download.savannah.nongnu.org/releases/flvstreamer/source/?C=N&O=D"
 regex = ">flvstreamer-(.+).tar.gz<"
 
+[fortls]
+source = "github"
+github = "fortran-lang/fortls"
+use_latest_release = true
+
 [fortran-language-server]
 source = "github"
 github = "hansec/fortran-language-server"
