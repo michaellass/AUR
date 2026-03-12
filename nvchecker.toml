@@ -55,8 +55,8 @@ regex = "Version\\W*<strong>\\W*<a [^>]*>(.+)</a>\\W*</strong>\\W*was released o
 
 [gnokii]
 source = "regex"
-url = "https://www.gnokii.org/"
-regex = "Current&nbsp;gnokii&nbsp;version: <b>([0-9\\.]+)</b>"
+url = "https://cgit.git.savannah.nongnu.org/cgit/gnokii.git/refs/"
+regex = "<a href='/cgit/gnokii.git/tag/\\?h=rel_([0-9_]+)'>rel_"
 
 [grml-rescueboot]
 source = "github"
