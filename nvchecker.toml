@@ -81,7 +81,7 @@ filter = '.available_releases | .[-1]'
 
 [jdk-temurin]
 source = "jq"
-url = "https://api.adoptium.net/v3/assets/latest/25/hotspot"
+url = "https://api.adoptium.net/v3/assets/latest/26/hotspot"
 filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
 
 [jdk11-temurin]
@@ -97,6 +97,11 @@ filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" 
 [jdk21-temurin]
 source = "jq"
 url = "https://api.adoptium.net/v3/assets/latest/21/hotspot"
+filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
+
+[jdk25-temurin]
+source = "jq"
+url = "https://api.adoptium.net/v3/assets/latest/25/hotspot"
 filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
 
 [js8call]
