@@ -30,8 +30,8 @@ regex = "<title>Autodesk EAGLE (.+) Download</title>"
 
 [ent]
 source = "regex"
-url = "https://packages.debian.org/unstable/ent"
-regex = "Package: ent \\((.+) and others\\)"
+url = "http://ftp.debian.org/debian/pool/main/e/ent/"
+regex = ">ent_(.+).debian.tar.xz"
 
 [flvstreamer]
 source = "regex"
