@@ -205,6 +205,11 @@ source = "regex"
 url = "https://www.tvbrowser.org/index.php?id=download"
 regex = "<h2>TV-Browser (.+)</h2>"
 
+[wsjtx]
+source = "regex"
+url = "https://sourceforge.net/projects/wsjt/files/"
+regex = '>wsjtx-([\.0-9]+)<'
+
 [yed]
 source = "regex"
 url = "http://www.yworks.com/products/yed"
