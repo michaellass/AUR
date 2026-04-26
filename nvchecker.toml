@@ -17,6 +17,11 @@ source = "github"
 github = "dougalsutherland/arxiv-collector"
 use_latest_release = true
 
+[dmidiplayer]
+source = "github"
+github = "pedrolcl/dmidiplayer"
+use_latest_release = true
+
 [dream]
 source = "httpheader"
 url = "https://sourceforge.net/projects/drm/files/latest/download"

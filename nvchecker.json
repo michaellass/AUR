@@ -16,6 +16,11 @@
       "gitref": "refs/tags/0.4.1",
       "url": "https://github.com/djsutherland/arxiv-collector/releases/tag/0.4.1"
     },
+    "dmidiplayer": {
+      "version": "v1.7.5",
+      "gitref": "refs/tags/v1.7.5",
+      "url": "https://github.com/pedrolcl/dmidiplayer/releases/tag/v1.7.5"
+    },
     "dream": {
       "version": "2.2"
     },
