@@ -150,9 +150,9 @@
       "url": "https://pypi.org/project/pygatt/5.0.0/"
     },
     "sdrangel-bin": {
-      "version": "v7.23.2",
-      "gitref": "refs/tags/v7.23.2",
-      "url": "https://github.com/f4exb/sdrangel/releases/tag/v7.23.2"
+      "version": "v7.24.0",
+      "gitref": "refs/tags/v7.24.0",
+      "url": "https://github.com/f4exb/sdrangel/releases/tag/v7.24.0"
     },
     "siril": {
       "version": "1.4.2-hf1"
