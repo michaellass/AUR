@@ -64,7 +64,7 @@
       "url": "https://github.com/JabRef/jabref/releases/tag/v5.15"
     },
     "jdk-temurin": {
-      "version": "jdk-26+35"
+      "version": "jdk-26.0.1+8"
     },
     "jdk-temurin-major": {
       "version": "26"
