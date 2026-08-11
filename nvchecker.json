@@ -82,8 +82,9 @@
       "version": "jdk-25.0.4+7"
     },
     "js8call": {
-      "version": "v2.2.0-ga",
-      "url": "https://bitbucket.org/widefido/js8call/commits/tag/v2.2.0-ga"
+      "version": "v2.3.1",
+      "gitref": "refs/tags/v2.3.1",
+      "url": "https://github.com/js8call/js8call/releases/tag/v2.3.1"
     },
     "krb5-auth-dialog": {
       "version": "v43.0",

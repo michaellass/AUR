@@ -110,11 +110,9 @@ url = "https://api.adoptium.net/v3/assets/latest/25/hotspot"
 filter = '.[] | select (.binary.architecture == "x64" and .binary.os == "linux" and .binary.image_type == "jdk") | .release_name'
 
 [js8call]
-source = "bitbucket"
-bitbucket = "widefido/js8call"
-use_max_tag = true
-use_sorted_tags = true
-sort_version_key = "vercmp"
+source = "github"
+github = "js8call/js8call"
+use_latest_release = true
 
 [krb5-auth-dialog]
 source = "gitlab"
