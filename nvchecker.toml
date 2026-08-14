@@ -62,6 +62,7 @@ regex = "Version\\W*<strong>\\W*<a [^>]*>(.+)</a>\\W*</strong>\\W*was released o
 source = "regex"
 url = "https://cgit.git.savannah.nongnu.org/cgit/gnokii.git/refs/"
 regex = "<a href='/cgit/gnokii.git/tag/\\?h=rel_([0-9_]+)'>rel_"
+tries = 3
 
 [grml-rescueboot]
 source = "github"
