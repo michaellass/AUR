@@ -2,9 +2,10 @@
   "version": 2,
   "data": {
     "applecommander": {
-      "version": "13.2",
-      "gitref": "refs/tags/13.2",
-      "url": "https://github.com/AppleCommander/AppleCommander/releases/tag/13.2"
+      "version": "14.0",
+      "gitref": "refs/tags/14.0",
+      "url": "https://github.com/AppleCommander/AppleCommander/releases/tag/14.0",
+      "creation_time": "2026-08-21T22:12:08Z"
     },
     "archlinux-java-run": {
       "version": "v12",
