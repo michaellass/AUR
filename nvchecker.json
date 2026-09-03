@@ -51,10 +51,10 @@
       "version": "0.6.31"
     },
     "grml-rescueboot": {
-      "version": "v0.6.9",
-      "gitref": "refs/tags/v0.6.9",
-      "revision": "e9cd1ee0b38933153ae63a81fe3855c8a7890db6",
-      "url": "https://github.com/grml/grml-rescueboot/releases/tag/v0.6.9"
+      "version": "v0.7.0",
+      "gitref": "refs/tags/v0.7.0",
+      "revision": "aa3c1d0011c9e2c13dbe60113d2592fae9d80941",
+      "url": "https://github.com/grml/grml-rescueboot/releases/tag/v0.7.0"
     },
     "ikiwiki": {
       "version": "3.20260201"
