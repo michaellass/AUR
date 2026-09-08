@@ -58,11 +58,6 @@ source = "regex"
 url = "https://fritzing.org/download/"
 regex = "Version\\W*<strong>\\W*<a [^>]*>(.+)</a>\\W*</strong>\\W*was released on"
 
-[gnokii]
-source = "regex"
-url = "https://download.samba.org/pub/gnokii/gnokii/"
-regex = "\">gnokii-([0-9.]+).tar.bz2</a>"
-
 [grml-rescueboot]
 source = "github"
 github = "grml/grml-rescueboot"

@@ -47,9 +47,6 @@
     "fritzing": {
       "version": "1.0.8"
     },
-    "gnokii": {
-      "version": "0.6.31"
-    },
     "grml-rescueboot": {
       "version": "v0.7.0",
       "gitref": "refs/tags/v0.7.0",
