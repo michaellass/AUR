@@ -77,7 +77,7 @@
       "version": "jdk-21.0.12.1+1"
     },
     "jdk25-temurin": {
-      "version": "jdk-25.0.4.1+1"
+      "version": "jdk-25.0.5+8"
     },
     "js8call": {
       "version": "v2.3.1",
