@@ -126,10 +126,10 @@
       "version": "6.4.2"
     },
     "portfolio": {
-      "version": "0.89.0",
-      "gitref": "refs/tags/0.89.0",
-      "url": "https://github.com/portfolio-performance/portfolio/releases/tag/0.89.0",
-      "creation_time": "2026-10-11T05:53:48Z"
+      "version": "0.90.0",
+      "gitref": "refs/tags/0.90.0",
+      "url": "https://github.com/portfolio-performance/portfolio/releases/tag/0.90.0",
+      "creation_time": "2026-11-01T15:53:23Z"
     },
     "pycrc": {
       "version": "v0.12.0",
