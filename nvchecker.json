@@ -18,9 +18,10 @@
       "url": "https://github.com/djsutherland/arxiv-collector/releases/tag/0.4.1"
     },
     "dmidiplayer": {
-      "version": "v1.7.5",
-      "gitref": "refs/tags/v1.7.5",
-      "url": "https://github.com/pedrolcl/dmidiplayer/releases/tag/v1.7.5"
+      "version": "v1.8.0",
+      "gitref": "refs/tags/v1.8.0",
+      "url": "https://github.com/pedrolcl/dmidiplayer/releases/tag/v1.8.0",
+      "creation_time": "2026-11-05T21:48:10Z"
     },
     "dream": {
       "version": "2.2"
