@@ -102,9 +102,10 @@
       "url": "https://github.com/meshtastic/python/releases/tag/2.7.11"
     },
     "mp-sonivoxeas": {
-      "version": "v2.2.0",
-      "gitref": "refs/tags/v2.2.0",
-      "url": "https://github.com/pedrolcl/multiplatform-sonivoxeas/releases/tag/v2.2.0"
+      "version": "v2.3.0",
+      "gitref": "refs/tags/v2.3.0",
+      "url": "https://github.com/pedrolcl/multiplatform-sonivoxeas/releases/tag/v2.3.0",
+      "creation_time": "2026-11-14T15:32:36Z"
     },
     "mumudvb": {
       "version": "20260716",
